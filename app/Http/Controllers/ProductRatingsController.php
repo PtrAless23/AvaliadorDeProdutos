@@ -36,7 +36,7 @@ class ProductRatingsController extends Controller
         $rules = [
             'product_id' => 'required|exists:products,id',
             'name' => 'required',
-            'grade' => 'required|integer|min:1|max:5',
+            'grade' => 'required|integer|numeric|min:1|max:5',
             'comment' => 'required'
         ];
 
@@ -69,7 +69,7 @@ class ProductRatingsController extends Controller
         $rules = [
             'product_id' => 'required|exists:products,id',
             'name' => 'required',
-            'grade' => 'required|integer|min:1|max:5',
+            'grade' => 'required|integer|numeric|min:1|max:5',
             'comment' => 'required'
         ];
 
@@ -78,7 +78,7 @@ class ProductRatingsController extends Controller
             'product_id.exists' => 'O atributo product_id deve conter um ID de produto válido.',
             'name.required' => 'O atributo name é obrigatório.',
             'grade.required' => 'O atributo grade é obrigatório.',
-            'grade.integer' => 'O atributo grade deve ser do tipo inteiro.',
+            'grade.integer' => 'O atributo grade deve ser um número do tipo inteiro.',
             'grade.min' => 'O atributo grade deve ser no mínimo 1.',
             'grade.max' => 'O atributo grade deve ser no máximo 5.',
             'comment.required' => 'O atributo comment é obrigatório.'
